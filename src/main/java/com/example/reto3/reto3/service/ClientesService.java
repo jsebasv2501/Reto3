@@ -24,10 +24,10 @@ public class ClientesService {
     }
 
     public Clientes save(Clientes c){
-        if(c.getIdCliente() == null){
+        if(c.getIdClient() == null){
             return clientesRepository.save(c);
         }else{
-            Optional<Clientes> cAux = clientesRepository.getCliente(c.getIdCliente());
+            Optional<Clientes> cAux = clientesRepository.getCliente(c.getIdClient());
             if(cAux.isEmpty()){
                 return clientesRepository.save(c);
             }else{
@@ -37,8 +37,8 @@ public class ClientesService {
     }
 
     public Clientes update(Clientes c){
-        if(c.getIdCliente() != null){
-            Optional<Clientes> cAux = clientesRepository.getCliente(c.getIdCliente());
+        if(c.getIdClient() != null){
+            Optional<Clientes> cAux = clientesRepository.getCliente(c.getIdClient());
             if(!cAux.isEmpty()){
                 if(c.getName() != null){
                     cAux.get().setName(c.getName());

@@ -1,10 +1,16 @@
 package com.example.reto3.reto3.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "clientes")
@@ -12,20 +18,29 @@ public class Clientes {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCliente;
-    private String name;
+    private Integer idClient;
     private String email;
-    private Integer age;
     private String password;
-
+    private String name;
+    private Integer age;
     
 
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @JsonIgnoreProperties("client")
+    private List<Message> messages;
 
-    public Integer getIdCliente() {
-        return idCliente;
+
+    public List<Message> getMessages() {
+        return messages;
     }
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setMessages(List<Message> messagesc) {
+        this.messages = messagesc;
+    }
+    public Integer getIdClient() {
+        return idClient;
+    }
+    public void setIdClient(Integer idCliente) {
+        this.idClient = idCliente;
     }
     public String getName() {
         return name;

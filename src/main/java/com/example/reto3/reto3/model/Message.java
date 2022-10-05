@@ -17,21 +17,35 @@ public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String messagetext;
+    private Integer idMessage;
+    private String messageText;
 
     @ManyToOne
     @JoinColumn(name="machineId")
     @JsonIgnoreProperties("messages")
     private Machine machine;
 
+    @ManyToOne
+    @JoinColumn(name="clienteId")
+    @JsonIgnoreProperties("messages")
+    private Clientes client;
+
     public String getMessageText() {
-        return messagetext;
+        return messageText;
     }
 
-    public void setMessageText(String menssagetext) {
-        this.messagetext = menssagetext;
+    public void setMessageText(String messagetext) {
+        this.messageText = messagetext;
     }
+
+    public Clientes getClient() {
+        return client;
+    }
+
+    public void setClient(Clientes clients) {
+        this.client = clients;
+    }
+
 
     public Machine getMachine() {
         return machine;
@@ -41,12 +55,12 @@ public class Message {
         this.machine = machine2;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdMessage() {
+        return idMessage;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdMessage(Integer id) {
+        this.idMessage = id;
     }
 
 }    
