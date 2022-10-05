@@ -18,12 +18,28 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String mensaje;
+    private String messagetext;
 
     @ManyToOne
     @JoinColumn(name="machineId")
-    @JsonIgnoreProperties("machine")
-    private Integer maquinaid;
+    @JsonIgnoreProperties("messages")
+    private Machine machine;
+
+    public String getMessageText() {
+        return messagetext;
+    }
+
+    public void setMessageText(String menssagetext) {
+        this.messagetext = menssagetext;
+    }
+
+    public Machine getMachine() {
+        return machine;
+    }
+
+    public void setMachine(Machine machine2) {
+        this.machine = machine2;
+    }
 
     public Integer getId() {
         return id;
@@ -33,19 +49,4 @@ public class Message {
         this.id = id;
     }
 
-    public String getMensaje() {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
-    }
-
-    public Integer getMaquinaid() {
-        return maquinaid;
-    }
-
-    public void setMaquinaid(Integer maquinaid) {
-        this.maquinaid = maquinaid;
-    }
-}
+}    

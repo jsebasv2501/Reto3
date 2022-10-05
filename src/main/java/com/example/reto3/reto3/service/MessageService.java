@@ -42,11 +42,11 @@ public class MessageService {
         if(m.getId() != null){
             Optional<Message> mAux = messageRepository.getMessage(m.getId());
             if(!mAux.isEmpty()){
-                if(m.getMensaje() != null){
-                    mAux.get().setMensaje(m.getMensaje());
+                if(m.getMessageText() != null){
+                    mAux.get().setMessageText(m.getMessageText());
                 }
-                if(m.getMaquinaid() != null){
-                    mAux.get().setMaquinaid(m.getMaquinaid());
+                if(m.getMachine() != null){
+                    mAux.get().setMachine(m.getMachine());
                 }
 
                 messageRepository.save(mAux.get());
