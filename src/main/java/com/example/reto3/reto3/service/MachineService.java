@@ -60,6 +60,14 @@ public class MachineService {
                     mAux.get().setCategory(m.getCategory());
                 }
 
+                if(m.getMessages() != null){
+                    mAux.get().setMessages(m.getMessages());
+                }
+
+                if(m.getReservations() != null){
+                    mAux.get().setReservations(m.getReservations());
+                }
+
                 machineRepository.save(mAux.get());
                 return mAux.get();
             }else{

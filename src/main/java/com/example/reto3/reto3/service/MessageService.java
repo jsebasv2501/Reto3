@@ -49,6 +49,10 @@ public class MessageService {
                     mAux.get().setMachine(m.getMachine());
                 }
 
+                if(m.getClient() != null){
+                    mAux.get().setClient(m.getClient());
+                }
+
                 messageRepository.save(mAux.get());
                 return mAux.get();
             }else{

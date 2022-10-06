@@ -32,9 +32,19 @@ public class Machine implements Serializable{
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "machine")
-    @JsonIgnoreProperties("machine")
+    @JsonIgnoreProperties({"machine","client"})
     private List<Message> messages;
 
+    @OneToMany(cascade = {CascadeType.ALL},mappedBy = "machine")
+    @JsonIgnoreProperties({"machine","messages"})
+    private List<Reservation> reservations;
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
     public List<Message> getMessages() {
         return messages;
     }

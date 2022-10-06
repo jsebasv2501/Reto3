@@ -56,6 +56,14 @@ public class ClientesService {
                     cAux.get().setPassword(c.getPassword());
                 }
 
+                if(c.getMessages() != null){
+                    cAux.get().setMessages(c.getMessages());
+                }
+
+                if(c.getReservations() != null){
+                    cAux.get().setReservations(c.getReservations());
+                }
+
                 clientesRepository.save(cAux.get());
                 return cAux.get();
             }else{

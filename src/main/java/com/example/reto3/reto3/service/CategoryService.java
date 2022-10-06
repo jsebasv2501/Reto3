@@ -48,6 +48,10 @@ public class CategoryService {
                 if(c.getDescription() != null){
                     cAux.get().setDescription(c.getDescription());
                 }
+
+                if(c.getMachines() !=null){
+                    cAux.get().setMachines(c.getMachines());
+                }
                 categoryRepository.save(cAux.get());
                 return cAux.get();
             }else{

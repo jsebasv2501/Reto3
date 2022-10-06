@@ -1,5 +1,7 @@
 package com.example.reto3.reto3.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="message")
-public class Message {
+public class Message implements Serializable{
     
 
     @Id
@@ -22,12 +24,12 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name="machineId")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Machine machine;
 
     @ManyToOne
     @JoinColumn(name="clienteId")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Clientes client;
 
     public String getMessageText() {
