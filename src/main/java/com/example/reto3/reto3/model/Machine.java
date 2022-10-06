@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "machine")
+@Table(name = "machines")
 public class Machine implements Serializable{
     
     @Id
@@ -22,7 +22,7 @@ public class Machine implements Serializable{
     private Integer id;
     private String name;
     private String brand;
-    private Integer year;
+    private Integer years;
     private String description;
     
     
@@ -81,11 +81,11 @@ public class Machine implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getYear() {
-        return year;
+    public Integer getYears() {
+        return years;
     }
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setYears(Integer year) {
+        this.years = year;
     }
     
 }
