@@ -52,8 +52,8 @@ public class MachineService {
                     mAux.get().setName(m.getName());
                 }
 
-                if(m.getYears() != null){
-                    mAux.get().setYears(m.getYears());
+                if(m.getYear() != null){
+                    mAux.get().setYear(m.getYear());
                 }
 
                 if(m.getCategory() != null){
