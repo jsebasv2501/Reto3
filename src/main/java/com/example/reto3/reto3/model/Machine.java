@@ -81,10 +81,10 @@ public class Machine implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getYear() {
+    public Integer getYears() {
         return years;
     }
-    public void setYear(Integer year) {
+    public void setYears(Integer year) {
         this.years = year;
     }
     
