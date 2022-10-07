@@ -22,7 +22,7 @@ public class Machine implements Serializable{
     private Integer id;
     private String name;
     private String brand;
-    private Integer years;
+    private Integer year;
     private String description;
     
     
@@ -81,11 +81,11 @@ public class Machine implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getYears() {
-        return years;
+    public Integer getYear() {
+        return year;
     }
-    public void setYears(Integer year) {
-        this.years = year;
+    public void setYear(Integer year) {
+        this.year = year;
     }
     
 }
